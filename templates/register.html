@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h1>Register Page</h1>
+    {% with messages = get_flashed_messages() %}
+        {% for msg in messages %}
+        <div class="alert alert-danger">
+            {{ msg }}
+        </div>
+        {% endfor %}
+    {% endwith %}
+    <div class="row justify-content-center">
+        <form method="POST" enctype="multipart/form-data" class="col-6 p-5">
+            {{ form.hidden_tag() }}
+            <div class="row mt-2">
+                {{ form.username(class="form-control", placeholder=form.username.label.text) }}
+            </div>
+            <div class="row mt-2">
+                {{ form.password(class="form-control", placeholder=form.password.label.text) }}
+            </div>
+            <div class="row mt-2">
+                {{ form.confirm_password(class="form-control", placeholder=form.confirm_password.label.text) }}
+            </div>
+            <div class="row mt-2">
+                {{ form.register(class="btn btn-light", placeholder=form.register.label.text) }}
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+
+
+

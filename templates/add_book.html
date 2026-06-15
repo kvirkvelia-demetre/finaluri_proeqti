@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="light">Add Books Page</h1>
+
+<div class="row justify-content-center">
+    <form method="POST" enctype="multipart/form-data" class="col-6 p-5">
+        {{ form.hidden_tag() }}
+        <div class="row">
+            {{ form.image(class="form-control", accept=".png, .jpg, .jpeg") }}
+        </div>
+        <div class="row mt-2">
+            {{ form.title(class="form-control", placeholder=form.title.label.text) }}
+        </div>
+        <div class="row mt-2">
+            {{ form.release_year(class="form-control", placeholder=form.release_year.label.text) }}
+        </div>
+        <div class="row mt-2">
+            {{ form.author(class="form-control", placeholder=form.author.label.text) }}
+        </div>
+        <div class="row mt-2">
+            {{ form.genre(class="form-control", placeholder=form.genre.label.text) }}
+        </div>
+        <div class="row mt-2">
+            {{ form.description(class="form-control", placeholder=form.description.label.text, rows=4) }}
+        </div>
+        <div class="row mt-2">
+            {{ form.submit(class="btn btn-success", placeholder=form.submit.label.text) }}
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
+
+
